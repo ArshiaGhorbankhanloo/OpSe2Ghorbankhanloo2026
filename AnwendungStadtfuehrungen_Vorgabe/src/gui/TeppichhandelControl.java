@@ -42,18 +42,17 @@ public class TeppichhandelControl {
 
     public void leseAusDatei(String typ) {
         try {
-            if ("csv".equals(typ)) {
-                this.model.leseAusCsvDatei();
+            
+                this.model.leseAusCsvDatei(typ);
                 view.zeigeInformationsfensterAn("Der Teppich wurde gelesen!");
-            } else {
-                view.zeigeInformationsfensterAn("Noch nicht implementiert!");
-            }
+         
         } catch (IOException exc) {
             view.zeigeFehlermeldungsfensterAn("IOException beim Lesen!");
         } catch (Exception exc) {
             view.zeigeFehlermeldungsfensterAn("Unbekannter Fehler beim Lesen!");
         }
     }
+    
 
     public void schreibeTeppicheInDatei(String typ) {
         try {
